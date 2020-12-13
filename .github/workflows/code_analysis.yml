@@ -1,7 +1,7 @@
 name: Code Analyis
 
 on: push
- 
+
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
