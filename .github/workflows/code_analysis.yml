@@ -1,6 +1,7 @@
 name: Code Analyis
 
-on: push
+on: 
+  pull request:
 
 jobs:
   sonarcloud:

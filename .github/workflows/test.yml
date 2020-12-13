@@ -14,5 +14,5 @@ jobs:
     - name: Build
       run: yarn build
 
-     - name: Gather Coverage
+    - name: Gather Coverage
       run: yarn run test:unit
