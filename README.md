@@ -41,6 +41,13 @@ Para esta parte do trabalho, poderá ser utilizada qualquer tecnologia ou ferram
 
 Caso cumpra todos os requisitos descritos acima, será atribuída uma pontuação extra para o aluno que configure sua pipeline de modo a publicar a aplicação automaticamente, sempre que um novo trecho de código seja integrado à branch default.
 
+
+### Build
+
+```
+docker-compose build
+```
+
 ### Run 
 
 ```
@@ -52,3 +59,11 @@ docker-compose up
 ```
 docker exec -it vue-js yarn test:unit
 ```
+
+### Code Analysis
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=miguelpimentel_vue_dockerizing&metric=alert_status)](https://sonarcloud.io/dashboard?id=miguelpimentel_vue_dockerizing)
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=miguelpimentel_vue_dockerizing)](https://sonarcloud.io/dashboard?id=miguelpimentel_vue_dockerizing)
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=miguelpimentel_vue_dockerizing)
