@@ -1,6 +1,11 @@
 name: Unit Test
 
-on: push
+on:
+  pull_request:
+  push: 
+    branches:
+      - main
+      - release
 
 jobs:
   test:
@@ -8,11 +13,35 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Yarn
-      run: yarn install
+    - name: Docker Build
+      run: docker-compose build
         
-    - name: Build
-      run: yarn build
+    - name: Run Unit Test
+      run: docker-compose run vue-js yarn run test:unit
+    # - name: Setup Yarn
+    #   run: yarn install
+        
+    # - name: Build
+    #   run: yarn build
 
-    - name: Gather Coverage
-      run: yarn run test:unit
+    # - name: Gather Coverage
+    #   run: yarn run test:unit
+
+    #     test:
+    # runs-on: ubuntu-latest
+    # steps:
+    # - uses: actions/checkout@v2
+
+    # - name: Docker Build
+    #   run: docker-compose build
+        
+    # - name: Setup Docker Build and Test
+    #   run: |
+    #     docker-compose run api rake db:create
+    #     docker-compose run api rake db:migrate
+
+    # - name: Docker List
+    #   run: docker container ls
+
+    # - name: Run Unit Test
+    #   run: docker-compose run api bundle exec rails test
